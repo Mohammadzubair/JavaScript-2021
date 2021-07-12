@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body onload="currentUserLogedIn()">
+    <main class="mainSection">
+      <div class="mainInnerWrapper">
+        <section class="mainLeftSection" id="mainLeftSection">
+          <button class="hamBurgerBtn" onclick="clickButton()">&#9776;</button>
+          <div class="sidebar-header">
+            <div class="user-pic">
+              <img
+                class="img-responsive img-rounded"
+                src="assets/images/user.jpg"
+                alt="User picture"
+              />
+            </div>
+            <div class="user-info">
+              <span class="user-name">
+                <strong id="userLoggedIn"></strong>
+              </span>
+              <span class="user-role">Administrator</span>
+              <span class="user-status">
+                <i></i>
+                <span>Online</span>
+              </span>
+            </div>
+          </div>
+          <div class="userDetails">
+            <h5 id="userPhone"></h5>
+            <h5 id="userAddress"></h5>
+            <h5 id="userEmail"></h5>
+          </div>
+          <div class="menuItems">
+            <ul>
+              <li>
+                <a href="#" class="active">
+                  <span class="item">Home</span>
+                  <span class="icon"><i class="fas fa-home"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">My Dashboard</span>
+                  <span class="icon"><i class="fas fa-desktop"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">People</span>
+                  <span class="icon"><i class="fas fa-user-friends"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">Perfomance</span>
+                  <span class="icon"
+                    ><i class="fas fa-tachometer-alt"></i
+                  ></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">Development</span>
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">Reports</span>
+                  <span class="icon"><i class="fas fa-chart-line"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">Admin</span>
+                  <span class="icon"><i class="fas fa-user-shield"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="item">Settings</span>
+                  <span class="icon"><i class="fas fa-cog"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="mainRightSection" id="mainRightSection">
+          <div class="topBar">
+            <div class="logo">
+              <a class="" href="#">LOGO</a>
+            </div>
+            <div class="">
+              <button60px
+                type="button"
+                class="btn btn-primary"
+                onClick="userLogout()"
+              >
+                LogOut
+              </button60px>
+            </div>
+          </div>
+          <div class="rightSectionContent">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-12">
+                <form
+                  class="cardFormSection"
+                  onsubmit="return false"
+                  id="cardForm"
+                >
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="emailAddress">Title *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          placeholder="Title"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1"
+                          >Description *</label
+                        >
+                        <textarea
+                          placeholder="Description"
+                          class="form-control"
+                          id="description"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        onclick="cardAdd()"
+                      >
+                        Add card
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row" id="cardRow"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="errorMessage" role="alert" id="errorMessage"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="deleteModal"
+                data-dismiss="modal"
+                onclick="cardRemove()"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

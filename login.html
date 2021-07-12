@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/images/signin.mp4" type="video/mp4" />
+    </video>
+    <div class="mainSignUpWrapper">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-12">
+            <form onsubmit="return false">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12 noPadding">
+                      <div
+                        class="formBanner"
+                        style="background: url(assets/images/signin.jpg)"
+                      >
+                        <h4>Sign In</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row rowBg">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="emailAddress">Email address *</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="emailAddress"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <div class="forgotPassword">
+                          <label for="password">Password *</label>
+                          <label for="forgotPassword"
+                            ><a href="#">Forgot Password</a></label
+                          >
+                        </div>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="Password"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="exampleCheck1"
+                          />
+                          <label class="form-check-label" for="exampleCheck1"
+                            >Remember me</label
+                          >
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        onClick="login()"
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="createAccount">
+                        <p>
+                          Don't have an account
+                          <a href="signup.html">Create one</a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <p
+                        class="errorMessage"
+                        role="alert"
+                        id="errorMessage"
+                      ></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

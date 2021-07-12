@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/images/signup.mp4" type="video/mp4" />
+    </video>
+    <div class="mainSignUpWrapper">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-12">
+            <form onsubmit="return false">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-12 noPadding">
+                      <div
+                        class="formBanner"
+                        style="background: url(assets/images/signup-bg.jpg)"
+                      >
+                        <h4>Sign Up</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row rowBg">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fullName"
+                          placeholder="Full Name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="phoneNumber"
+                          placeholder="Phone Number"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="completeAddress">Address</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="completeAddress"
+                          placeholder="Address"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="emailAddress">Email address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="emailAddress"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                        <small id="emailHelp" class="form-text text-muted"
+                          >We'll never share your email with anyone else.</small
+                        >
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        onClick="signup()"
+                      >
+                        Signup
+                      </button>
+                      <a href="login.html">I have an account</a>
+                    </div>
+                    <div class="col-md-12">
+                      <p
+                        class="errorMessage"
+                        role="alert"
+                        id="errorMessage"
+                      ></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

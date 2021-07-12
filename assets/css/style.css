@@ -1,0 +1,332 @@
+html,
+body {
+  overflow-x: hidden;
+  background-color: #f5f6fa;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.mainSignUpWrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.mainSignUpWrapper::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(bottom, #402d1d, #211e1e);
+  opacity: 0.9;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.formBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  border-radius: 0.25rem 0.25rem 0 0;
+  -webkit-border-radius: 0.25rem 0.25rem 0 0;
+  -moz-border-radius: 0.25rem 0.25rem 0 0;
+  -ms-border-radius: 0.25rem 0.25rem 0 0;
+  -o-border-radius: 0.25rem 0.25rem 0 0;
+  position: relative;
+  z-index: 9;
+}
+
+.formBanner::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(bottom, #402d1d, #211e1e);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.formBanner h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.rowBg {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding-block: 15px;
+  border-radius: 0 0 0.25rem 0.25rem;
+  -webkit-border-radius: 0 0 0.25rem 0.25rem;
+  -moz-border-radius: 0 0 0.25rem 0.25rem;
+  -ms-border-radius: 0 0 0.25rem 0.25rem;
+  -o-border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.forgotPassword {
+  display: flex;
+  justify-content: space-between;
+}
+
+.createAccount {
+  text-align: center;
+}
+.createAccount p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.mainInnerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.mainLeftSection {
+  background-color: rgb(5, 68, 104);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 700ms;
+  -webkit-transition: all 700ms;
+  -moz-transition: all 700ms;
+  -ms-transition: all 700ms;
+  -o-transition: all 700ms;
+  width: 225px;
+  height: 100%;
+}
+
+.mainInnerWrapper.active .mainLeftSection {
+  left: -165px;
+  transition: all 700ms;
+  -webkit-transition: all 700ms;
+  -moz-transition: all 700ms;
+  -ms-transition: all 700ms;
+  -o-transition: all 700ms;
+}
+
+.hamBurgerBtn {
+  position: absolute;
+  content: "";
+  font-size: 22px;
+  height: auto;
+  border: none;
+  top: 5px;
+  right: 5px;
+  z-index: 9;
+  cursor: pointer;
+  color: #054468;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 0.25rem;
+  width: 50px;
+  font-weight: bold;
+}
+
+.hamBurgerBtn:focus {
+  outline: none;
+}
+
+.mainRightSection {
+  width: calc(100% - 225px);
+  margin-left: 225px;
+  transition: all 700ms;
+  -webkit-transition: all 700ms;
+  -moz-transition: all 700ms;
+  -ms-transition: all 700ms;
+  -o-transition: all 700ms;
+  position: relative;
+}
+
+.mainInnerWrapper.active .mainRightSection {
+  width: 100%;
+  transition: all 700ms;
+  -webkit-transition: all 700ms;
+  -moz-transition: all 700ms;
+  -ms-transition: all 700ms;
+  -o-transition: all 700ms;
+  margin-left: 60px;
+}
+
+.topBar {
+  height: 50px;
+  background-color: rgb(7, 105, 185);
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rightSectionContent {
+  margin: 20px;
+  background-color: #fff;
+  padding: 15px;
+  min-height: 100vh;
+  box-shadow: 0px 3px 15px 6px #0000003d;
+  -webkit-box-shadow: 0px 3px 15px 6px #0000003d;
+  -moz-box-shadow: 0px 3px 15px 6px #0000003d;
+}
+
+.cardFormSection {
+  color: #000;
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  margin: 15px 0 0 0;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  padding-block: 5px;
+  display: none;
+}
+
+/*--------------------sidebar-header----------------------*/
+
+.sidebar-header {
+  padding: 10px 15px;
+  overflow: hidden;
+  color: #fff;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header .user-pic {
+  padding: 2px;
+  margin-right: 15px;
+  flex-basis: 30%;
+}
+
+.sidebar-header .user-pic img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.sidebar-header .user-info {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header .user-info .user-role {
+  font-size: 12px;
+}
+
+.sidebar-header .user-info .user-status {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.sidebar-header .user-info .user-status i {
+  margin-right: 4px;
+  background-color: #5cb85c;
+  height: 8px;
+  width: 8px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: inline-block;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.userDetails h5 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.menuItems ul li a {
+  display: block;
+  padding: 13px 30px;
+  border-bottom: 1px solid #10558d;
+  color: rgb(241, 237, 237);
+  font-size: 16px;
+  position: relative;
+}
+
+.menuItems ul li a .icon {
+  color: #dee4ec;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+/* .mainInnerWrapper.active .mainLeftSection .menuItems ul li a {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+} */
+
+.menuItems ul li a:hover,
+.menuItems ul li a.active {
+  color: #0c7db1;
+  text-decoration: none;
+  background: white;
+  border-right: 5px solid #0c7db1;
+}
+
+.menuItems ul li a:hover .icon,
+.menuItems ul li a.active .icon {
+  color: #0c7db1;
+}
+
+.menuItems ul li a:hover:before,
+.menuItems ul li a.active:before {
+  display: block;
+}
+
+.card-body a {
+  color: #fff;
+}
+
+.card-body button {
+  margin-left: 10px;
+}
